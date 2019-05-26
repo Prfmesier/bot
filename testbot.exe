@@ -1,0 +1,26 @@
+# -*- mode: python -*-
+block_cipher = pyi_crypto.PyiBlockCipher(key='a6NI0DSw=bR;ZB1H')
+a = Analysis(['testbot.py'],
+             pathex=['/Users/polruizfarre/Documents/botnet/byob/byob'],
+             binaries=[],
+             datas=[],
+             hiddenimports=['sys', 'base64', 'marshal', 'zlib', 'json', 'urllib', 'hashlib', 'random', 'zlib', 'requests', 'os', 'zipfile', 'sys', 'logging', 'json', 'numpy', 'StringIO', 'ctypes', 'copy', 'errno', 'ftplib', 'uuid', 'collections', 'base64', 'colorama', 'time', 'struct', 'functools', 'threading', 'socket', 'subprocess'],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=['site'],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          name='testbot',
+          debug=False,
+          strip=False,
+          upx=False,
+          runtime_tmpdir=None,
+          console=False, icon=None)
